@@ -6,6 +6,7 @@ library(stringr)
 library(rpart)
 library(reactable)
 library(tidymodels)
+library(markdown)
 
 
 
