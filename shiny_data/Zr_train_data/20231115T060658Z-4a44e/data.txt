@@ -1,0 +1,9 @@
+file: Zr_train_data.rds
+file_size: 2176343
+pin_hash: 4a44e15bace0c933
+type: rds
+title: 'Zr_train_data: a pinned 13700 x 30 data frame'
+description: ~
+tags: ~
+created: 20231115T060658Z
+api_version: 1
