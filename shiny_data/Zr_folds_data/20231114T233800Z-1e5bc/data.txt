@@ -1,0 +1,9 @@
+file: Zr_folds_data.rds
+file_size: 972022
+pin_hash: 1e5bcef638b3c87d
+type: rds
+title: 'Zr_folds_data: a pinned 5872 x 36 data frame'
+description: ~
+tags: ~
+created: 20231114T233800Z
+api_version: 1

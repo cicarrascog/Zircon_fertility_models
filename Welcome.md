@@ -16,5 +16,6 @@ The `Classification Tree` tab allows to train and test a decision tree model bas
   2. λ coefficients ([O'Neill, 2016](https://academic.oup.com/petrology/article/57/8/1463/2413419)) describe the REE pattern according to their features. λ3 is a and exelent predictor of fertile zirons, on par to the Eu/Eu*.  λ coefficients can be calculated using the `pyrolite` package of `python` or the [BLambdaR app](https://lambdar.rses.anu.edu.au/blambdar/) ([Anenburg and Williams, 2021](https://link.springer.com/article/10.1007/s11004-021-09959-5))
   3. Although the model can manage missing data, it is recommended to exclude any varaible with a big proportion of missing values. 
   
-  For the source code, please visit: **to be defined**
+  For the source code, please visit: [https://github.com/cicarrascog/Zircon_fertility_models](https://github.com/cicarrascog/Zircon_fertility_models)
+  
   Creator: [Carlos Carrasco-Godoy](https://github.com/cicarrascog)

@@ -123,16 +123,9 @@ page_navbar(
         ),
         nav_panel(
           title = "Tree Plot",
-          tabsetPanel(
-            nav_panel(
-              title = "Description",
-              markdown("## High tree depth values are not properly visualized")
-            ),
-            nav_panel(
-              title = "Plot",
-              shiny::plotOutput("tree_plot")
-            )
-          )
+          markdown("### High tree depth values are not properly visualized"),
+          shiny::plotOutput("tree_plot")
+          
         ), 
         nav_panel(
           title = "Predict",
