@@ -111,8 +111,8 @@ page_navbar(
         nav_panel(
           title = "Metrics",
           markdown(''),
-          markdown("**Metrics should be similar in both, test and crossvalidation**"),       
-          markdown("Area under the ROC curve (ROC AUC): probability that the model will rank higher a random fertile zircon than a randomly selected barren zircon"),           markdown("**Sensitivity:** Proportion of fertile zircons correctly classified among the fertile zircon"),       
+          markdown("**Metrics should be similar in both, test and cross-validation**"),       
+          markdown("The area under the ROC curve (ROC AUC): the probability that the model will rank higher a random fertile zircon than a randomly selected barren zircon"),           markdown("**Sensitivity:** Proportion of fertile zircons correctly classified among the fertile zircon"),       
           markdown("**Specificity**: Proportion of barren Zircons, correctly classified among the barren zircons"),
           
           card(  card_header(
@@ -151,6 +151,7 @@ page_navbar(
       )
     )
   ),
+  nav_panel(title = "References", includeMarkdown("References.md")),
   nav_panel(title = "Licence",
             includeMarkdown('LICENSE.md')),
 )
