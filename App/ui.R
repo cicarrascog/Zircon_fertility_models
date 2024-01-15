@@ -152,6 +152,7 @@ page_navbar(
     )
   ),
   nav_panel(title = "References", includeMarkdown("References.md")),
-  nav_panel(title = "Licence",
+  nav_panel(title = "Changelog", includeMarkdown("Changelog.md")),
+  nav_panel(title = "License",
             includeMarkdown('LICENSE.md')),
 )
