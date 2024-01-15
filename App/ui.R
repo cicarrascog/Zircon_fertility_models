@@ -89,12 +89,14 @@ page_navbar(
     page_sidebar(
       sidebar = sidebar(
         title = "Settings",
-        shiny::numericInput(
+        shiny::sliderInput(
+          round = TRUE,
+          step = 1L,
           label = "Tree Depth",
-          min = 1,
-          max = 15,
+          min = 1L,
+          max = 30L,
           inputId = "tree_depth",
-          value = 10
+          value = 5
         ),
         shiny::checkboxGroupInput(
           selected = c(
@@ -112,8 +114,8 @@ page_navbar(
           title = "Metrics",
           markdown(''),
           markdown("**Metrics should be similar in both, test and cross-validation**"),       
-          markdown("The area under the ROC curve (ROC AUC): the probability that the model will rank higher a random fertile zircon than a randomly selected barren zircon"),           markdown("**Sensitivity:** Proportion of fertile zircons correctly classified among the fertile zircon"),       
-          markdown("**Specificity**: Proportion of barren Zircons, correctly classified among the barren zircons"),
+          markdown("The area under the ROC curve (ROC AUC): the probability that the model will rank higher on a random fertile zircon than a randomly selected barren zircon"),           markdown("**Sensitivity:** Proportion of fertile zircons correctly classified among the fertile zircon"),       
+          markdown("**Specificity**: Proportion of barren zircons, correctly classified among the barren zircons"),
           
           card(  card_header(
             "Metrics table"
@@ -130,19 +132,24 @@ page_navbar(
         ), 
         nav_panel(
           title = "Predict",
-          card(markdown('This is a template to prepare your data. Interpret `_` as `/`, `L` as `λ`, and `Eu_Eu` and `Ce_Ce` as the `Eu/Eu*` and `Ce/Ce*`, respectively.'),
-               markdown('The Ce/Ce*, La and Pr in this model is the one calculated by the method of [Carrasco-Godoy and Campbell (2023)](https://link.springer.com/article/10.1007/s00410-023-02025-9). The [imputeREEapp](https://ccarr.shinyapps.io/ImputeREEapp) can be used to calculate these values.'),
+          card(markdown('This is a template to prepare your data. Interpret `_` as `/`, `L` as `λ`, and `Eu_Eu` and `Ce_Ce` as the `Eu/Eu*` and `Ce/Ce*`, respectively. There are a `Deposit` and `Class` columns that can be left empty.'),
+               markdown('The Ce/Ce*, La and Pr in this model are those calculated by the method of [Carrasco-Godoy and Campbell (2023)](https://link.springer.com/article/10.1007/s00410-023-02025-9). The [imputeREEapp](https://ccarr.shinyapps.io/ImputeREEapp) can be used to calculate these values.'),
                markdown("λ coefficients ([O'Neill, 2016](https://academic.oup.com/petrology/article/57/8/1463/2413419)) can be calculated with the pyrolite package of `python` or the [BLambdaR app](https://lambdar.rses.anu.edu.au/blambdar/) ([Anenburg and Williams, 2021](https://link.springer.com/article/10.1007/s11004-021-09959-5))."),
                downloadButton("template", "Download data template")),
           
           card(markdown('The model is fitted only with the checkbox selected in the settings sidebar on the left side of this page.'),
                
-               fileInput( inputId= "upload",label = 'Upload' ,placeholder  = 'upload your data as .csv', accept = '.csv', multiple = F), 
+               fileInput( inputId= "upload",
+                          label = 'Upload' ,
+                          width = '100%',
+                          placeholder  = 'upload your data as .csv',
+                          accept = '.csv', 
+                          multiple = F), 
                reactable::reactableOutput('uploadcheck')
                ), 
           
           card(
-            markdown('The probabilities produced by this model are not calibrated, therefore they should not be interpreted as true probabilities. Instead, they can be used to rank zircons.'),
+            markdown('The probabilities produced by this model are not calibrated, therefore they should not be interpreted as true probabilities. Instead, they can be used to rank zircons as more likely or less likely to be fertile.'),
                markdown('**Bigger files will take longer to process**'), 
             downloadButton("download", "Download predictions"),
             reactable::reactableOutput('preds_table') ), 
@@ -153,6 +160,9 @@ page_navbar(
   ),
   nav_panel(title = "References", includeMarkdown("References.md")),
   nav_panel(title = "Changelog", includeMarkdown("Changelog.md")),
-  nav_panel(title = "License",
-            includeMarkdown('LICENSE.md')),
+  nav_spacer(),
+  nav_panel(title = "License",includeMarkdown('LICENSE.md')),
+  nav_item(
+    input_dark_mode(id = "dark_mode", mode = "light")
+  )
 )
