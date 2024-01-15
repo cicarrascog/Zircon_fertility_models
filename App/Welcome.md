@@ -16,9 +16,9 @@ The right panel is divided into three sections:
 ## Important notes
 
 1.  This model uses calculated La, Pr and Ce/Ce\* following the method of [Carrasco-Godoy and Campbell (2023)](https://link.springer.com/article/10.1007/s00410-023-02025-9). The [imputeREEapp](https://ccarr.shinyapps.io/ImputeREEapp) can be used to calculate these values.
-2.  λ coefficients ([O'Neill, 2016](https://academic.oup.com/petrology/article/57/8/1463/2413419)) describe the REE pattern according to their features (slope, curvature, average REE content, etc.). λ~3~ is an excellent predictor of fertile zircons, on par with the Eu/Eu\*. λ coefficients can be calculated using the `pyrolite` package of `python` or the [BLambdaR app](https://lambdar.rses.anu.edu.au/blambdar/) ([Anenburg and Williams, 2021](https://link.springer.com/article/10.1007/s11004-021-09959-5))
+2.  λ coefficients ([O'Neill, 2016](https://academic.oup.com/petrology/article/57/8/1463/2413419)) describe the REE pattern according to their features (slope, curvature, average REE content, etc.). λ~3~ is an excellent predictor of fertile zircons, on par with the Eu/Eu\*. λ coefficients can be calculated using the `pyrolite` package of `Python` or the [BLambdaR app](https://lambdar.rses.anu.edu.au/blambdar/) ([Anenburg and Williams, 2021](https://link.springer.com/article/10.1007/s11004-021-09959-5))
 3.  Although the model can manage missing data, it is recommended to exclude any variable with a big proportion of missing values.
 
 For the source code, please visit: <https://github.com/cicarrascog/Zircon_fertility_models>
 
-Creator: [Carlos Carrasco-Godoy](https://github.com/cicarrascog) For bugs or questions contact at: [carlos.carrasco\@anu.edu.au](mailto:carlos.carrasco@anu.edu.au){.email}
+Creator: [Carlos Carrasco-Godoy](https://cicarrascog.github.io) For bugs or questions contact: [carlos.carrasco\@anu.edu.au](mailto:carlos.carrasco@anu.edu.au){.email}
