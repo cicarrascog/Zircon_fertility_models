@@ -9,3 +9,7 @@
 -   Added dark mode support
 -   Expanded the explanation on the required files
 -   Increased maximum decision tree depth to 30
+
+## 02/2024
+
+- Minor updates to welcome page

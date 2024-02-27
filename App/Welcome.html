@@ -11,7 +11,7 @@
 
 
 
-<title>Changelog</title>
+<title>Welcome</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,25 +352,52 @@ display: none;
 </div>
 
 
-<div id="changelog" class="section level1">
-<h1>Changelog</h1>
-<div id="pre-release-version" class="section level2">
-<h2>01/2024 Pre-release version</h2>
-<ul>
-<li>Added changelog</li>
-<li>Updated to R 4.3</li>
-<li>Updated packages</li>
-<li>Fixed typos and grammar</li>
-<li>Added dark mode support</li>
-<li>Expanded the explanation on the required files</li>
-<li>Increased maximum decision tree depth to 30</li>
-</ul>
-</div>
-<div id="section" class="section level2">
-<h2>02/2024</h2>
-<ul>
-<li>Changed status to accepted manuscript</li>
-</ul>
+<div id="welcome" class="section level1">
+<h1>Welcome</h1>
+<p>This app was created as part of the article “<em>Quantifying the
+criteria used to identify zircons from ore-bearing and barren systems in
+porphyry copper exploration”</em> by <a href="https://cicarrascog.github.io/">Carlos Carrasco-Godoy</a>, <a href="https://earthsciences.anu.edu.au/professor-ian-campbell">Ian
+Campbell</a> and <a href="https://discover.utas.edu.au/yamila.cajal">Yamila Cajal</a>,
+currently in press in the Economic Geology journal.</p>
+<p>This Web App allows the classification of zircons using decision
+trees according to a set of selectable variables in the
+<code>Classification Tree</code> tab at the top. This allows you to
+build simple decision trees according to the data that you have
+available.</p>
+<p>The <code>Classification Tree</code> tab allows to train and test of
+a decision tree model based on the dataset of the publication above.
+<code>Random Forest</code> support will be added in a future update.</p>
+<p>The left sidebar can be used to set up the tree depth of the model.
+The right panel is divided into three sections:</p>
+<ol style="list-style-type: decimal">
+<li>Metrics: Real-time cross-validation and test set metrics according
+to the variables selected in the settings sidebar.</li>
+<li>Visualization of the modelled decision tree (for low values of tree
+depth).</li>
+<li>Application of the model. Here you can upload your data and apply
+the model to it. Your data and results will be displayed once the model
+fit is complete.</li>
+</ol>
+<div id="important-notes" class="section level2">
+<h2>Important notes</h2>
+<ol style="list-style-type: decimal">
+<li>This model uses calculated La, Pr and Ce/Ce* following the method of
+<a href="https://link.springer.com/article/10.1007/s00410-023-02025-9">Carrasco-Godoy
+and Campbell (2023)</a>. The <a href="https://ccarr.shinyapps.io/ImputeREEapp">imputeREEapp</a> can be
+used to calculate these values.</li>
+<li>λ coefficients (<a href="https://academic.oup.com/petrology/article/57/8/1463/2413419">O’Neill,
+2016</a>) describe the REE pattern according to their features (slope,
+curvature, average REE content, etc.). λ<sub>3</sub> is an excellent
+predictor of fertile zircons, on par with the Eu/Eu*. λ coefficients can
+be calculated using the <code>pyrolite</code> package for
+<code>Python</code> or the <a href="https://lambdar.rses.anu.edu.au/blambdar/">BLambdaR app</a> (<a href="https://link.springer.com/article/10.1007/s11004-021-09959-5">Anenburg
+and Williams, 2021</a>)</li>
+<li>Although the model can manage missing data, it is recommended to
+exclude any variable with a big proportion of missing values.</li>
+</ol>
+<p>For the source code, please visit: <a href="https://github.com/cicarrascog/Zircon_fertility_models" class="uri">https://github.com/cicarrascog/Zircon_fertility_models</a></p>
+<p>Creator: <a href="https://cicarrascog.github.io">Carlos
+Carrasco-Godoy</a> For bugs or questions contact: <a href="mailto:carlos.carrasco@anu.edu.au">carlos.carrasco@anu.edu.au</a></p>
 </div>
 </div>
 

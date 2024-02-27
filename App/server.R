@@ -82,7 +82,7 @@ function(input, output, session) {
   All_metrics <- reactive({
     bind_cols( CV_Metrics(),test_metrics() %>%  select(-.metric)) %>% 
       relocate(`test set`, .before = crossvalidation) %>% 
-      rename(Metric = .metric, `cv subsets` = n, `cv std error` = std_err)
+      rename(Metric = .metric, `cv subsets` = n, `cv std error` = std_err,`cross-validation` = crossvalidation )
   })
   
 
